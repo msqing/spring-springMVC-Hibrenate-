@@ -1,0 +1,214 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.techusn</groupId>
+  <artifactId>tccms</artifactId>
+  <version>1.0</version>
+  <packaging>war</packaging>
+  
+  <repositories>
+	<repository>
+		<id>io.spring.repo.maven.snapshot</id>
+		<url>http://repo.spring.io/snapshot/</url>
+		<snapshots><enabled>true</enabled></snapshots>
+	</repository>
+  </repositories>
+
+  <name>tccms</name>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <springframework.version>4.3.7.RELEASE</springframework.version>
+    <springframework.data.version>1.11.1.RELEASE</springframework.data.version>
+    <springside.version>5.0.0-SNAPSHOT</springside.version>
+    <hibernate.version>4.3.5.Final</hibernate.version>
+    <mysql.connector.version>5.1.31</mysql.connector.version>
+  </properties>
+
+  <dependencies>
+  		<!-- Spring -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${springframework.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${springframework.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${springframework.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${springframework.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${springframework.version}</version>
+        </dependency>
+        <dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-beans</artifactId>
+		    <version>${springframework.version}</version>
+	  	</dependency>
+	  	<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aspects</artifactId>
+			<version>${springframework.version}</version>
+		</dependency>
+		
+		<!-- spring jpa data操作数据封装 -->
+		<dependency>
+	        <groupId>org.springframework.data</groupId>
+	        <artifactId>spring-data-jpa</artifactId>
+	        <version>${springframework.data.version}</version>
+	    </dependency>
+	    
+	    <!-- springside操作数据封装 -->
+	    <dependency>
+			<groupId>io.springside</groupId>
+			<artifactId>springside-core</artifactId>
+			<version>${springside.version}</version>
+		</dependency>
+		
+        <!-- Hibernate -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+        <dependency>
+	        <groupId>org.hibernate</groupId>
+	        <artifactId>hibernate-entitymanager</artifactId>
+	        <version>${hibernate.version}</version>
+	    </dependency>
+		
+        <!-- Tomcat配置相关 -->
+        <dependency>
+	        <groupId>javax.servlet.jsp.jstl</groupId>
+	        <artifactId>javax.servlet.jsp.jstl-api</artifactId>
+	        <version>1.2.1</version>
+	    </dependency>
+	    <dependency>
+	        <groupId>taglibs</groupId>
+	        <artifactId>standard</artifactId>
+	        <version>1.1.2</version>
+	    </dependency>
+	    <dependency>
+	        <groupId>tomcat</groupId>
+	        <artifactId>servlet-api</artifactId>
+	        <version>5.5.23</version>
+	        <scope>provided</scope>
+	    </dependency>
+	    <dependency>
+	        <groupId>tomcat</groupId>
+	        <artifactId>jsp-api</artifactId>
+	        <version>5.5.23</version>
+	        <scope>provided</scope>
+	    </dependency>
+	    <dependency>
+	        <groupId>commons-fileupload</groupId>
+	        <artifactId>commons-fileupload</artifactId>
+	        <version>1.3.1</version>
+	    </dependency>
+ 
+        <!-- MySQL -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.connector.version}</version>
+        </dependency>
+ 
+        <!-- Servlet+JSP+JSTL -->
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>javax.servlet.jsp-api</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+        <dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>0.11.0</version>
+		</dependency>
+	    <dependency>
+	      <groupId>junit</groupId>
+	      <artifactId>junit</artifactId>
+	      <version>3.8.1</version>
+	      <scope>test</scope>
+	    </dependency>
+	    
+	    <!-- 工具类包 -->
+	    <dependency>
+			<groupId>org.apache.directory.studio</groupId>
+			<artifactId>org.apache.commons.lang</artifactId>
+			<version>2.6</version>
+		</dependency>
+	    <dependency>
+			<groupId>net.sf.json-lib</groupId>
+			<artifactId>json-lib</artifactId>
+			<version>2.4</version>
+		</dependency>
+	    
+	    
+	    <!-- ========= 日志 ========= -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.5</version>
+		</dependency>
+  </dependencies>
+  
+  <!-- 构建设置 -->
+	<build>
+		<!-- 插件配置 -->
+		<plugins>
+			<!-- maven打包war插件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<warName>${project.artifactId}</warName>
+					<packagingExcludes>**/rebel.xml,**/hibernate.reveng.xml,**/hibernate-mysql.cfg.xml,**/hibernate-mysql.reveng.xml</packagingExcludes>
+				</configuration>
+			</plugin>
+
+			<!-- 编译插件，设定JDK版本 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.5.1</version>
+			</plugin>
+			<plugin>  
+		        <groupId>org.apache.maven.plugins</groupId>  
+		        <artifactId>maven-resources-plugin</artifactId>
+		        <version>2.5</version>
+		    </plugin>
+		     <plugin>  
+		        <groupId>org.apache.maven.plugins</groupId>  
+		        <artifactId>maven-surefire-plugin</artifactId>  
+		        <version>2.12</version>
+		        <configuration>
+		            <skipTests>true</skipTests>  
+		        </configuration>  
+		    </plugin>
+		    
+		</plugins>
+	</build>
+  <description>客户营销系统</description>
+</project>
